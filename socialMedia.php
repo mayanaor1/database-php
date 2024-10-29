@@ -96,7 +96,7 @@ echo "<style>
 
 try {
     echo "<div class='feed-container'>";
-    
+    //sql query for getting the data
     $sql = "
         SELECT users.id AS user_id, users.name, posts.title, posts.body, posts.date
         FROM users
@@ -112,6 +112,7 @@ try {
     $currentUser = null;
     $img = saveImageFromUrl($imageUrl, $imageFileName);
     
+    //print the tables
     foreach ($results as $row) {
         if ($currentUser !== $row['user_id']) {
             if ($currentUser !== null) {
